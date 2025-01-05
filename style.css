@@ -1,0 +1,97 @@
+body {
+    background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Gradient Background */
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full view height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin: auto;
+    width: 60%;
+    max-width: 800px;
+    border: 2px solid #66a6ff;
+}
+
+fieldset {
+    border: 1px solid #66a6ff; /* Border matching theme color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px 20px; /* Space inside fieldset */
+    margin: 20px 0; /* Space between fieldsets */
+    background: rgba(102, 166, 255, 0.1); /* Light blue background for distinction */
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #66a6ff; /* Theme color */
+    padding: 0 10px; /* Space around legend text */
+}
+
+label {
+    display: block; /* Align labels above inputs */
+    margin: 10px 0 5px; /* Space around labels */
+    font-weight: bold;
+    text-align: left; /* Align text to the left */
+}
+
+input, select {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Space inside inputs */
+    margin: 10px 0; /* Space below inputs */
+    border: 1px solid #ccc; /* Subtle border for inputs */
+    border-radius: 4px; /* Rounded input edges */
+    box-sizing: border-box; /* Include padding and border in width */
+    font-size: 1em; /* Consistent font size */
+}
+
+button {
+    background-color: #66a6ff; /* Primary button color */
+    color: white; /* White text for contrast */
+    padding: 12px 24px; /* Larger button for better UX */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Readable button text */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+button:hover {
+    background-color: #4d85cc; /* Darker blue on hover */
+}
+
+h1, h2 {
+    color: #333; /* Dark gray for better readability */
+    margin: 10px 0; /* Space below headers */
+}
+
+form div {
+    margin-bottom: 15px; /* Space between label-input pairs */
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+input[type="checkbox"] {
+    width: auto; /* Default size for checkboxes */
+    margin-right: 10px; /* Space after checkbox */
+}
+
+/*button[type="submit"]:hover {
+    background-color: #45a049;
+}
+*/
+
+/* Specific styles for the "Upload ID Picture" section */
+#id_picture {
+    display: block;
+    margin: 15px 0;
+    padding: 8px;
+}

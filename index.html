@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 100 Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Level 100 Registration Form</h1>
+        <h2>National Union of Presbyterian Students - Ghana</h2>
+        <h3>(AAMUSTED Local)</h3>
+        <hr>
+        <form id="registrationForm">
+            <!-- Personal Details -->
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+
+                <label for="other_name">Other Name:</label>
+                <input type="text" id="other_name" name="other_name">
+
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender" required>
+                    <option value=""></option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="marital_status">Marital Status:</label>
+                <select name="marital_status" id="marital_status" required>
+                    <option value=""></option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+
+                <label for="contact">Contact:</label>
+                <input type="tel" id="contact" name="contact" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+
+            <!-- Emergency Details -->
+            <fieldset>
+                <legend>Emergency Details</legend>
+                <label for="emergency_contact_1">Emergency Contact:</label>
+                <input type="tel" id="emergency_contact_1" name="emergency_contacts[]" required>
+            </fieldset>
+
+            <!-- Address Details -->
+            <fieldset>
+                <legend>Address Details</legend>
+                <label for="Home_Town">Home Town:</label>
+                <input type="text" id="Home_Town" name="Home_Town" required>
+
+                <label for="region">Region:</label>
+                <input type="text" list="regions" id="region" name="region" required>
+                <datalist id="regions">
+                    <option value="Greater Accra">
+                    <option value="Ashanti">
+                    <option value="Central">
+                    <option value="Eastern">
+                    <option value="Western">
+                    <option value="Volta">
+                    <option value="Northern">
+                    <option value="Upper East">
+                    <option value="Upper West">
+                    <option value="Brong-Ahafo">
+                    <option value="Western North">
+                    <option value="Oti">
+                    <option value="Ahafo">
+                    <option value="Bono East">
+                    <option value="North East">
+                    <option value="Savanna">
+                </datalist>
+
+                <label for="Hall_Of_Affiliation">Hall Of Affiliation:</label>
+                <select name="Halls" id="Halls">
+                    <option></option>
+                    <option>Opoku Ware Hall</option>
+                    <option>Atwima Hall</option>
+                    <option>Autonomy Hall</option>
+                </select>
+
+                <label for="Place_of_stay">Where Do You Stay On Campus?</label>
+                <input type="text" id="Place_of_stay" name="Place_of_stay" required>
+            </fieldset>
+
+            <!-- Educational Details -->
+            <fieldset>
+                <legend>Educational Details</legend>
+                <label for="program">Program of Studies:</label>
+                <input type="text" list="programs" id="program" name="program" required>
+                <datalist id="programs">
+                    <option value="B. A. Arabic Education">
+                    <option value="B. A. English Education">
+                    <!-- Truncated for brevity -->
+                </datalist>
+            </fieldset>
+
+            <!-- Wings -->
+            <fieldset>
+                <legend>Wings of Choice</legend>
+                <div class="wing-group">
+                    <label><input type="checkbox" name="wings[]" value="Organizing"> Organizing</label>
+                    <label><input type="checkbox" name="wings[]" value="Prayer Wing"> Prayer Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Bible Studies Wing"> Bible Studies Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Coordinating Wing"> Coordinating Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Ushering"> Ushering</label>
+                    <label><input type="checkbox" name="wings[]" value="Evangelism Wing"> Evangelism Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Inspirers"> Inspirers</label>
+                    <label><input type="checkbox" name="wings[]" value="Choir"> Choir</label>
+                    <label><input type="checkbox" name="wings[]" value="Ladies Wing"> Ladies Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Vessels of Inspiration"> Vessels of Inspiration</label>
+                </div>
+            </fieldset>
+                <!-- ID Picture Upload -->
+            <fieldset>
+                <legend>Upload ID Picture</legend>
+                <label for="id_picture">Upload ID Picture:</label>
+                <input type="file" id="id_picture" name="id_picture" accept="image/*">
+            </fieldset>
+
+            <button type="submit" id="submitBtn">Generate PDF</button>
+            <button type="submit" id="submitBtn">Send</button>
+
+        </form>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent traditional form submission
+    
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    // Get form values
+    const firstName = document.getElementById('first_name').value;
+    const lastName = document.getElementById('last_name').value;
+    const otherName = document.getElementById('other_name').value;
+    const gender = document.getElementById('gender').value;
+    const maritalStatus = document.getElementById('marital_status').value;
+    const contact = document.getElementById('contact').value;
+    const email = document.getElementById('email').value;
+    const emergencyContact1 = document.getElementById('emergency_contact_1').value;
+    const homeTown = document.getElementById('Home_Town').value;
+    const region = document.getElementById('region').value;
+    const hallOfAffiliation = document.getElementById('Halls').value;
+    const program = document.getElementById('program').value;
+    const placeOfStay = document.getElementById('Place_of_stay').value;
+    
+    // Get the selected wings
+    const wings = Array.from(document.querySelectorAll('input[name="wings[]"]:checked')).map(checkbox => checkbox.value).join(', ');
+    
+    // Combine all names into one string
+    const fullName = `${firstName} ${otherName} ${lastName}`;
+    
+    // Add content to the PDF
+    doc.setFont('helvetica', 'bold');
+    doc.text("Level 100 Registration Form - NUPS-G (AAMUSTED Local)", 10, 10);
+
+    // Add subheading (Registration Form Details)
+    doc.setFont('helvetica', 'normal');
+    doc.text("Registration Form Details", 10, 20);
+
+    // Personal Details Section
+    doc.setFont('helvetica', 'bold');
+    doc.text("Full Name:", 10, 30);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${fullName}`, 60, 30);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text("Gender:", 10, 40);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${gender}`, 60, 40);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text("Marital Status:", 10, 50);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${maritalStatus}`, 60, 50);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text("Contact:", 10, 60);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${contact}`, 60, 60);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text("Email:", 10, 70);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${email}`, 60, 70);
+
+    // Emergency Contact Section
+    doc.setFont('helvetica', 'bold');
+    doc.text("Emergency Contact:", 10, 80);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${emergencyContact1}`, 60, 80);
+
+    // Address Details Section
+    doc.setFont('helvetica', 'bold');
+    doc.text("Home Town:", 10, 90);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${homeTown}`, 60, 90);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text("Region:", 10, 100);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${region}`, 60, 100);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text("Hall of Affiliation:", 10, 110);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${hallOfAffiliation}`, 60, 110);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text("Place of Stay on Campus:", 10, 120);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${placeOfStay}`, 60, 120);
+
+    // Educational Details Section
+    doc.setFont('helvetica', 'bold');
+    doc.text("Program of Studies:", 10, 130);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${program}`, 60, 130);
+
+    // Wings Selected Section
+    doc.setFont('helvetica', 'bold');
+    doc.text("Wings Selected:", 10, 140);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`${wings}`, 60, 140);
+
+    // Save the PDF
+    doc.save("registration_form.pdf");
+});
+
+    </script>
+</body>
+</html>
