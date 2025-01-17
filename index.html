@@ -51,55 +51,83 @@
                 <input type="email" id="email" name="email" required>
             </fieldset>
 
+            <!-- Emergency Details -->
+            <fieldset>
+                <legend>Emergency Details</legend>
+                <label for="emergency_contact_1">Emergency Contact:</label>
+                <input type="tel" id="emergency_contact_1" name="emergency_contacts[]" required>
+            </fieldset>
+
             <!-- Educational Details -->
             <fieldset>
+                <legend>Educational Details</legend>
                 <label for="program">Program of Studies:</label>
                 <input type="text" list="programs" id="program" name="program" required>
                 <datalist id="programs">
-                  <option value="B. A. Arabic Education">
-                     <option value="B. A. English Education">
-                     <option value="B. A. French Education">
-                     <option value="B. A. French with English Education">
-                     <option value="B. A. Social Studies with Economics Education">
-                     <option value="B.Ed. Early Grade (Early Childhood)">
-                     <option value="B. Sc. Fashion Design and Textiles Education">
-                     <option value="B. Sc. Catering and Hospitality Education">
-                     <option value="B. B. A. Secretarial Education">
-                     <option value="B. Sc. Management Education">
-                     <option value="B. Sc. Marketing">
-                     <option value="B. B. A. Executive Office Administration">
-                     <option value="B. Sc. Marketing and Entrepreneurship">
-                     <option value="B.B.A. Human Resource Management">
-                     <option value="B. Sc. Economics with Social Studies Education">
-                     <option value="B. Sc. Economics Education">
-                     <option value="B. Sc. Accounting Education">
-                     <option value="B. Sc. Admin Accounting">
-                     <option value="B. Sc. Procurement and Supply Chain Management">
-                     <option value="B. Sc. Banking and Finance">
-                     <option value="B. Sc. Business Information Systems">
-                     <option value="B. Sc. Mathematics Education">
-                     <option value="B. Sc. Information Technology Education">
-                     <option value="B.Sc. Information Technology">
-                     <option value="B.Sc. Cybersecurity and Digital Forensics">
-                     <option value="B. Sc. Automotive Engineering Technology Education">
-                     <option value="B. Sc. Mechanical Engineering Technology Education">
-                     <option value="B.Sc. Construction Technology and Management with Education">
-                     <option value="B.Sc. Welding and Fabrication Engineering Technology Education">
-                     <option value="B.Sc. Plumbing, Gas and Sanitary Technology">
-                     <option value="B.Sc Civil Engineering">
-                     <option value="B.Sc. Wood Technology with Education">
-                     <option value="B. Sc. Electrical and Electronics Engineering Technology Education">
-                     <option value="B.Sc. Mechanical Engineering Technology">
-                     <option value="B.Sc. Electrical and Electronics Engineering">
-                     <option value="2-year Post-Diploma in Construction Technology">
-                     <option value="2-year Post-Diploma in Automotive Engineering Technology">
-                     <option value="2-year Post-Diploma in Electrical and Electronics Engineering Technology">
-                     <option value="2-year Diploma in Wood Technology">
-                     <option value="2-year Diploma Business Admin Accounting">
-                     <option value="Diploma in Human Resource Management">
-                     <option value="Diploma in Office Management and Computer Applications">
-                     <option value="2-year Diploma Business Admin Management">
-                   </datalist> <hr>
+                    <option value="B. A. Arabic Education">
+                        <option value="B. A. English Education">
+                        <option value="B. A. French Education">
+                        <option value="B. A. French with English Education">
+                        <option value="B. A. Social Studies with Economics Education">
+                        <option value="B.Ed. Early Grade (Early Childhood)">
+                        <option value="B. Sc. Fashion Design and Textiles Education">
+                        <option value="B. Sc. Catering and Hospitality Education">
+                        <option value="B. B. A. Secretarial Education">
+                        <option value="B. Sc. Management Education">
+                        <option value="B. Sc. Marketing">
+                        <option value="B. B. A. Executive Office Administration">
+                        <option value="B. Sc. Marketing and Entrepreneurship">
+                        <option value="B.B.A. Human Resource Management">
+                        <option value="B. Sc. Economics with Social Studies Education">
+                        <option value="B. Sc. Economics Education">
+                        <option value="B. Sc. Accounting Education">
+                        <option value="B. Sc. Admin Accounting">
+                        <option value="B. Sc. Procurement and Supply Chain Management">
+                        <option value="B. Sc. Banking and Finance">
+                        <option value="B. Sc. Business Information Systems">
+                        <option value="B. Sc. Mathematics Education">
+                        <option value="B. Sc. Information Technology Education">
+                        <option value="B.Sc. Information Technology">
+                        <option value="B.Sc. Cybersecurity and Digital Forensics">
+                        <option value="B. Sc. Automotive Engineering Technology Education">
+                        <option value="B. Sc. Mechanical Engineering Technology Education">
+                        <option value="B.Sc. Construction Technology and Management with Education">
+                        <option value="B.Sc. Welding and Fabrication Engineering Technology Education">
+                        <option value="B.Sc. Plumbing, Gas and Sanitary Technology">
+                        <option value="B.Sc Civil Engineering">
+                        <option value="B.Sc. Wood Technology with Education">
+                        <option value="B. Sc. Electrical and Electronics Engineering Technology Education">
+                        <option value="B.Sc. Mechanical Engineering Technology">
+                        <option value="B.Sc. Electrical and Electronics Engineering">
+                        <option value="2-year Post-Diploma in Construction Technology">
+                        <option value="2-year Post-Diploma in Automotive Engineering Technology">
+                        <option value="2-year Post-Diploma in Electrical and Electronics Engineering Technology">
+                        <option value="2-year Diploma in Wood Technology">
+                        <option value="2-year Diploma Business Admin Accounting">
+                        <option value="Diploma in Human Resource Management">
+                        <option value="Diploma in Office Management and Computer Applications">
+                        <option value="2-year Diploma Business Admin Management">
+                </datalist>
+            </fieldset>
+
+            <label for="Place_of_stay">Place Of Residence</label>
+            <input type="text" id="Place_of_stay" name="Place_of_stay" required>
+
+            <!-- Wings of Choice -->
+            <fieldset>
+                <legend>Wings of Choice</legend>
+                <div class="wing-group">
+                    <label><input type="checkbox" name="wings[]" value="Organizing"> Organizing</label>
+                    <label><input type="checkbox" name="wings[]" value="Prayer Wing"> Prayer Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Bible Studies Wing"> Bible Studies Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Coordinating Wing"> Coordinating Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Ushering"> Ushering</label>
+                    <label><input type="checkbox" name="wings[]" value="Evangelism Wing"> Evangelism Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Inspirers"> Inspirers</label>
+                    <label><input type="checkbox" name="wings[]" value="Choir"> Choir</label>
+                    <label><input type="checkbox" name="wings[]" value="Ladies Wing"> Ladies Wing</label>
+                    <label><input type="checkbox" name="wings[]" value="Vessels of Inspiration"> Vessels of Inspiration</label>
+                </div>
             </fieldset>
 
             <!-- Capture ID Picture -->
@@ -160,7 +188,10 @@
             const maritalStatus = document.getElementById('marital_status').value;
             const contact = document.getElementById('contact').value;
             const email = document.getElementById('email').value;
+            const emergencyContact = document.getElementById('emergency_contact_1').value;
             const program = document.getElementById('program').value;
+            const placeOfStay = document.getElementById('Place_of_stay').value;
+            const wings = Array.from(document.querySelectorAll('input[name="wings[]"]:checked')).map((checkbox) => checkbox.value).join(', ');
 
             const fullName = `${firstName} ${otherName} ${lastName}`.trim(); // Full Name
 
@@ -204,6 +235,15 @@
             doc.text(`Email: ${email}`, 10, yOffset);
             yOffset += lineHeight;
 
+            // Emergency Details Section
+            doc.setFont('helvetica', 'bold');
+            doc.text("Emergency Details", 10, yOffset);
+            yOffset += lineHeight;
+
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Emergency Contact: ${emergencyContact}`, 10, yOffset);
+            yOffset += lineHeight;
+
             // Educational Details Section
             doc.setFont('helvetica', 'bold');
             doc.text("Educational Details", 10, yOffset);
@@ -211,6 +251,18 @@
 
             doc.setFont('helvetica', 'normal');
             doc.text(`Program of Studies: ${program}`, 10, yOffset);
+            yOffset += lineHeight;
+
+            doc.text(`Place of Stay: ${placeOfStay}`, 10, yOffset);
+            yOffset += lineHeight;
+
+            // Wings Section
+            doc.setFont('helvetica', 'bold');
+            doc.text("Wings of Choice", 10, yOffset);
+            yOffset += lineHeight;
+
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Selected Wings: ${wings}`, 10, yOffset);
 
             // Attach captured image to the PDF
             if (capturedImage.src) {
