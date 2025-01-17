@@ -25,6 +25,9 @@
                 <label for="other_name">Other Name:</label>
                 <input type="text" id="other_name" name="other_name">
 
+                <label for="date_of_birth">Date of Birth:</label>
+                <input type="date" id="date_of_birth" name="date_of_birth" required>
+
                 <label for="gender">Gender:</label>
                 <select name="gender" id="gender" required>
                     <option value=""></option>
@@ -48,199 +51,176 @@
                 <input type="email" id="email" name="email" required>
             </fieldset>
 
-            <!-- Emergency Details -->
-            <fieldset>
-                <legend>Emergency Details</legend>
-                <label for="emergency_contact_1">Emergency Contact:</label>
-                <input type="tel" id="emergency_contact_1" name="emergency_contacts[]" required>
-            </fieldset>
-
-            <!-- Address Details -->
-            <fieldset>
-                <legend>Address Details</legend>
-                <label for="Home_Town">Home Town:</label>
-                <input type="text" id="Home_Town" name="Home_Town" required>
-
-                <label for="region">Region:</label>
-                <input type="text" list="regions" id="region" name="region" required>
-                <datalist id="regions">
-                    <option value="Greater Accra">
-                    <option value="Ashanti">
-                    <option value="Central">
-                    <option value="Eastern">
-                    <option value="Western">
-                    <option value="Volta">
-                    <option value="Northern">
-                    <option value="Upper East">
-                    <option value="Upper West">
-                    <option value="Brong-Ahafo">
-                    <option value="Western North">
-                    <option value="Oti">
-                    <option value="Ahafo">
-                    <option value="Bono East">
-                    <option value="North East">
-                    <option value="Savanna">
-                </datalist>
-
-                <label for="Hall_Of_Affiliation">Hall Of Affiliation:</label>
-                <select name="Halls" id="Halls">
-                    <option></option>
-                    <option>Opoku Ware Hall</option>
-                    <option>Atwima Hall</option>
-                    <option>Autonomy Hall</option>
-                </select>
-
-                <label for="Place_of_stay">Where Do You Stay On Campus?</label>
-                <input type="text" id="Place_of_stay" name="Place_of_stay" required>
-            </fieldset>
-
             <!-- Educational Details -->
             <fieldset>
-                <legend>Educational Details</legend>
                 <label for="program">Program of Studies:</label>
                 <input type="text" list="programs" id="program" name="program" required>
                 <datalist id="programs">
-                    <option value="B. A. Arabic Education">
-                    <option value="B. A. English Education">
-                    <!-- Truncated for brevity -->
-                </datalist>
+                  <option value="B. A. Arabic Education">
+                     <option value="B. A. English Education">
+                     <option value="B. A. French Education">
+                     <option value="B. A. French with English Education">
+                     <option value="B. A. Social Studies with Economics Education">
+                     <option value="B.Ed. Early Grade (Early Childhood)">
+                     <option value="B. Sc. Fashion Design and Textiles Education">
+                     <option value="B. Sc. Catering and Hospitality Education">
+                     <option value="B. B. A. Secretarial Education">
+                     <option value="B. Sc. Management Education">
+                     <option value="B. Sc. Marketing">
+                     <option value="B. B. A. Executive Office Administration">
+                     <option value="B. Sc. Marketing and Entrepreneurship">
+                     <option value="B.B.A. Human Resource Management">
+                     <option value="B. Sc. Economics with Social Studies Education">
+                     <option value="B. Sc. Economics Education">
+                     <option value="B. Sc. Accounting Education">
+                     <option value="B. Sc. Admin Accounting">
+                     <option value="B. Sc. Procurement and Supply Chain Management">
+                     <option value="B. Sc. Banking and Finance">
+                     <option value="B. Sc. Business Information Systems">
+                     <option value="B. Sc. Mathematics Education">
+                     <option value="B. Sc. Information Technology Education">
+                     <option value="B.Sc. Information Technology">
+                     <option value="B.Sc. Cybersecurity and Digital Forensics">
+                     <option value="B. Sc. Automotive Engineering Technology Education">
+                     <option value="B. Sc. Mechanical Engineering Technology Education">
+                     <option value="B.Sc. Construction Technology and Management with Education">
+                     <option value="B.Sc. Welding and Fabrication Engineering Technology Education">
+                     <option value="B.Sc. Plumbing, Gas and Sanitary Technology">
+                     <option value="B.Sc Civil Engineering">
+                     <option value="B.Sc. Wood Technology with Education">
+                     <option value="B. Sc. Electrical and Electronics Engineering Technology Education">
+                     <option value="B.Sc. Mechanical Engineering Technology">
+                     <option value="B.Sc. Electrical and Electronics Engineering">
+                     <option value="2-year Post-Diploma in Construction Technology">
+                     <option value="2-year Post-Diploma in Automotive Engineering Technology">
+                     <option value="2-year Post-Diploma in Electrical and Electronics Engineering Technology">
+                     <option value="2-year Diploma in Wood Technology">
+                     <option value="2-year Diploma Business Admin Accounting">
+                     <option value="Diploma in Human Resource Management">
+                     <option value="Diploma in Office Management and Computer Applications">
+                     <option value="2-year Diploma Business Admin Management">
+                   </datalist> <hr>
             </fieldset>
 
-            <!-- Wings -->
+            <!-- Capture ID Picture -->
             <fieldset>
-                <legend>Wings of Choice</legend>
-                <div class="wing-group">
-                    <label><input type="checkbox" name="wings[]" value="Organizing"> Organizing</label>
-                    <label><input type="checkbox" name="wings[]" value="Prayer Wing"> Prayer Wing</label>
-                    <label><input type="checkbox" name="wings[]" value="Bible Studies Wing"> Bible Studies Wing</label>
-                    <label><input type="checkbox" name="wings[]" value="Coordinating Wing"> Coordinating Wing</label>
-                    <label><input type="checkbox" name="wings[]" value="Ushering"> Ushering</label>
-                    <label><input type="checkbox" name="wings[]" value="Evangelism Wing"> Evangelism Wing</label>
-                    <label><input type="checkbox" name="wings[]" value="Inspirers"> Inspirers</label>
-                    <label><input type="checkbox" name="wings[]" value="Choir"> Choir</label>
-                    <label><input type="checkbox" name="wings[]" value="Ladies Wing"> Ladies Wing</label>
-                    <label><input type="checkbox" name="wings[]" value="Vessels of Inspiration"> Vessels of Inspiration</label>
+                <legend>Capture ID Picture</legend>
+                <div>
+                    <video id="video" autoplay playsinline></video>
+                    <button type="button" id="captureBtn">Take Picture</button>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <img id="capturedImage" alt="Captured Image" style="display: none;" />
                 </div>
-            </fieldset>
-                <!-- ID Picture Upload -->
-            <fieldset>
-                <legend>Upload ID Picture</legend>
-                <label for="id_picture">Upload ID Picture:</label>
-                <input type="file" id="id_picture" name="id_picture" accept="image/*">
             </fieldset>
 
             <button type="submit" id="submitBtn">Generate PDF</button>
-            <button type="submit" id="submitBtn">Send</button>
-
         </form>
     </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent traditional form submission
-    
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    
-    // Get form values
-    const firstName = document.getElementById('first_name').value;
-    const lastName = document.getElementById('last_name').value;
-    const otherName = document.getElementById('other_name').value;
-    const gender = document.getElementById('gender').value;
-    const maritalStatus = document.getElementById('marital_status').value;
-    const contact = document.getElementById('contact').value;
-    const email = document.getElementById('email').value;
-    const emergencyContact1 = document.getElementById('emergency_contact_1').value;
-    const homeTown = document.getElementById('Home_Town').value;
-    const region = document.getElementById('region').value;
-    const hallOfAffiliation = document.getElementById('Halls').value;
-    const program = document.getElementById('program').value;
-    const placeOfStay = document.getElementById('Place_of_stay').value;
-    
-    // Get the selected wings
-    const wings = Array.from(document.querySelectorAll('input[name="wings[]"]:checked')).map(checkbox => checkbox.value).join(', ');
-    
-    // Combine all names into one string
-    const fullName = `${firstName} ${otherName} ${lastName}`;
-    
-    // Add content to the PDF
-    doc.setFont('helvetica', 'bold');
-    doc.text("Level 100 Registration Form - NUPS-G (AAMUSTED Local)", 10, 10);
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const capturedImage = document.getElementById('capturedImage');
+        const captureBtn = document.getElementById('captureBtn');
 
-    // Add subheading (Registration Form Details)
-    doc.setFont('helvetica', 'normal');
-    doc.text("Registration Form Details", 10, 20);
+        // Start video stream
+        navigator.mediaDevices
+            .getUserMedia({ video: true })
+            .then((stream) => {
+                video.srcObject = stream;
+            })
+            .catch((err) => {
+                console.error("Error accessing camera:", err);
+            });
 
-    // Personal Details Section
-    doc.setFont('helvetica', 'bold');
-    doc.text("Full Name:", 10, 30);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${fullName}`, 60, 30);
+        // Capture image on button click
+        captureBtn.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const imageData = canvas.toDataURL('image/png');
+            capturedImage.src = imageData;
+            capturedImage.style.display = 'block';
+        });
 
-    doc.setFont('helvetica', 'bold');
-    doc.text("Gender:", 10, 40);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${gender}`, 60, 40);
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent traditional form submission
 
-    doc.setFont('helvetica', 'bold');
-    doc.text("Marital Status:", 10, 50);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${maritalStatus}`, 60, 50);
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
 
-    doc.setFont('helvetica', 'bold');
-    doc.text("Contact:", 10, 60);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${contact}`, 60, 60);
+            // Get form values
+            const firstName = document.getElementById('first_name').value;
+            const lastName = document.getElementById('last_name').value;
+            const otherName = document.getElementById('other_name').value;
+            const dateOfBirth = document.getElementById('date_of_birth').value;
+            const gender = document.getElementById('gender').value;
+            const maritalStatus = document.getElementById('marital_status').value;
+            const contact = document.getElementById('contact').value;
+            const email = document.getElementById('email').value;
+            const program = document.getElementById('program').value;
 
-    doc.setFont('helvetica', 'bold');
-    doc.text("Email:", 10, 70);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${email}`, 60, 70);
+            const fullName = `${firstName} ${otherName} ${lastName}`.trim(); // Full Name
 
-    // Emergency Contact Section
-    doc.setFont('helvetica', 'bold');
-    doc.text("Emergency Contact:", 10, 80);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${emergencyContact1}`, 60, 80);
+            // Initialize PDF layout
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(16);
+            const title = "National Union of Presbyterian Students - Ghana (AAMUSTED Local)";
+            const pageWidth = doc.internal.pageSize.width;
+            const titleWidth = doc.getTextWidth(title);
+            const xPos = (pageWidth - titleWidth) / 2;
+            doc.text(title, xPos, 20);
 
-    // Address Details Section
-    doc.setFont('helvetica', 'bold');
-    doc.text("Home Town:", 10, 90);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${homeTown}`, 60, 90);
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'normal');
+            doc.text("2024 to 2028 Academic Year", 10, 40);
 
-    doc.setFont('helvetica', 'bold');
-    doc.text("Region:", 10, 100);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${region}`, 60, 100);
+            let yOffset = 50;
+            const lineHeight = 10;
 
-    doc.setFont('helvetica', 'bold');
-    doc.text("Hall of Affiliation:", 10, 110);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${hallOfAffiliation}`, 60, 110);
+            // Personal Details Section
+            doc.setFont('helvetica', 'bold');
+            doc.text("Personal Details", 10, yOffset);
+            yOffset += lineHeight;
 
-    doc.setFont('helvetica', 'bold');
-    doc.text("Place of Stay on Campus:", 10, 120);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${placeOfStay}`, 60, 120);
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Full Name: ${fullName}`, 10, yOffset);
+            yOffset += lineHeight;
 
-    // Educational Details Section
-    doc.setFont('helvetica', 'bold');
-    doc.text("Program of Studies:", 10, 130);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${program}`, 60, 130);
+            doc.text(`Date of Birth: ${dateOfBirth}`, 10, yOffset);
+            yOffset += lineHeight;
 
-    // Wings Selected Section
-    doc.setFont('helvetica', 'bold');
-    doc.text("Wings Selected:", 10, 140);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`${wings}`, 60, 140);
+            doc.text(`Gender: ${gender}`, 10, yOffset);
+            yOffset += lineHeight;
 
-    // Save the PDF
-    doc.save("registration_form.pdf");
-});
+            doc.text(`Marital Status: ${maritalStatus}`, 10, yOffset);
+            yOffset += lineHeight;
 
+            doc.text(`Contact: ${contact}`, 10, yOffset);
+            yOffset += lineHeight;
+
+            doc.text(`Email: ${email}`, 10, yOffset);
+            yOffset += lineHeight;
+
+            // Educational Details Section
+            doc.setFont('helvetica', 'bold');
+            doc.text("Educational Details", 10, yOffset);
+            yOffset += lineHeight;
+
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Program of Studies: ${program}`, 10, yOffset);
+
+            // Attach captured image to the PDF
+            if (capturedImage.src) {
+                doc.addImage(capturedImage.src, 'PNG', 10, yOffset + 20, 50, 50);
+            }
+
+            // Save the PDF
+            const fileName = `${fullName || 'Registration_Form'}.pdf`.replace(/[^a-zA-Z0-9]/g, '_');
+            doc.save(fileName);
+        });
     </script>
 </body>
 </html>
