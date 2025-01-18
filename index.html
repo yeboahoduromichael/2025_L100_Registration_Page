@@ -110,8 +110,20 @@
                 </datalist>
             </fieldset>
 
-            <label for="Place_of_stay">Place Of Residence</label>
-            <input type="text" id="Place_of_stay" name="Place_of_stay" required>
+            <!-- Address Details -->
+            <fieldset>
+                <legend>Address Details</legend>
+                <label for="Hall_Of_Affiliation">Hall Of Affiliation:</label>
+                <select name="Halls" id="Halls">
+                    <option></option>
+                    <option>Opoku Ware Hall</option>
+                    <option>Atwima Hall</option>
+                    <option>Autonomy Hall</option>
+                </select>
+
+                <label for="Place_of_stay">Place Of Residence</label>
+                <input type="text" id="Place_of_stay" name="Place_of_stay" required>
+            </fieldset>
 
             <!-- Wings of Choice -->
             <fieldset>
@@ -190,8 +202,11 @@
             const email = document.getElementById('email').value;
             const emergencyContact = document.getElementById('emergency_contact_1').value;
             const program = document.getElementById('program').value;
+            const hallOfAffiliation = document.getElementById('Halls').value;
             const placeOfStay = document.getElementById('Place_of_stay').value;
-            const wings = Array.from(document.querySelectorAll('input[name="wings[]"]:checked')).map((checkbox) => checkbox.value).join(', ');
+            const wings = Array.from(document.querySelectorAll('input[name="wings[]"]:checked'))
+                .map((checkbox) => checkbox.value)
+                .join(', ');
 
             const fullName = `${firstName} ${otherName} ${lastName}`.trim(); // Full Name
 
@@ -253,16 +268,25 @@
             doc.text(`Program of Studies: ${program}`, 10, yOffset);
             yOffset += lineHeight;
 
+            // Address Details Section
+            doc.setFont('helvetica', 'bold');
+            doc.text("Address Details", 10, yOffset);
+            yOffset += lineHeight;
+
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Hall of Affiliation: ${hallOfAffiliation}`, 10, yOffset);
+            yOffset += lineHeight;
+
             doc.text(`Place of Stay: ${placeOfStay}`, 10, yOffset);
             yOffset += lineHeight;
 
-            // Wings Section
+            // Wings of Choice Section
             doc.setFont('helvetica', 'bold');
             doc.text("Wings of Choice", 10, yOffset);
             yOffset += lineHeight;
 
             doc.setFont('helvetica', 'normal');
-            doc.text(`Selected Wings: ${wings}`, 10, yOffset);
+            doc.text(`Wings Selected: ${wings}`, 10, yOffset);
 
             // Attach captured image to the PDF
             if (capturedImage.src) {
